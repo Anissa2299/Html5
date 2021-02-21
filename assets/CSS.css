@@ -1,0 +1,109 @@
+
+nav{
+	overflow: hidden;
+	width:100%;
+	display:block;
+	margin-bottom: 4%;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to right, rgba(27, 48, 117,1), rgba(42, 72, 173,0.5),rgba(96, 128, 235,0));
+}
+
+li {
+  float: left;
+  margin: 1%;
+  cursor: pointer;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 5px ;
+  text-decoration: none;
+}
+
+a {
+	cursor: pointer;
+}
+
+/* Change the link color to #111 (black) on hover */
+ul li a:hover {
+  color: #adbced;
+  font-size: larger; 
+}
+
+a { -webkit-transition: color .5s ease-out; }
+
+header {
+	background-color: #193975;
+	padding: 30px;
+	text-align: center;
+	font-size: 35px;
+	color: white;	
+}
+
+article {
+	float: left;
+	padding: 20px;
+	width: 30%;
+	background-color: #f1f1f1;
+	margin-top: 50px;
+	height: 100%;
+	}
+
+			
+	
+footer {
+	background-color: #777;
+	padding: 18px;
+	text-align: center;
+	color: white;
+	margin-bottom: 0px;
+	left: 0;
+	bottom: 0;
+	width: 97%;
+	}
+
+			
+section:after {
+	content: "";
+	display: table;
+	clear: both;
+	}
+			
+			
+main {
+	padding: 20px;
+	background-color: white;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	}
+	
+aside{
+	float: left;
+	width: 30%;
+	margin-top: 50px;
+	margin-left: -150px;
+}
+
+td input[type=text]{
+	width: 10px;
+	}
+	
+#dropdiv {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+.form-input-div{
+	text-align: center;
+	display: block;
+	margin: 1rem;
+}

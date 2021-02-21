@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="assets\CSS.css">
+		<link href="assets\timer.js">
+	</head>
+	
+	<body>
+		<nav>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="fun.html">Fun</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</nav>
+	<!--<div style="border: 1px solid black; padding:10px;">-->
+	
+		<h1 style="text-align:center; color:#4992f2;">Let's Play With COLORS and SHAPES</h1>
+		<img src="images\c.jpg" style="width:50%; height:500px; display: block; margin-left: auto; margin-right: auto; margin-bottom:5%; ">
+		<header style="background-color: #417dcc; border: 1px solid black; color:white;">
+			
+				<label style="text-align:center; font-size:20px; color:black; font-weight:bold;color:white;">HTML5 semantic, canvas, Local Storage, Web Workers, ...</label>
+				<span id="timer" style="float:right; font-size:10px; margin-top:50px; color:black;">Timer not displayed since there is a problem in onmessage not called</span>
+			
+		</header>
+		
+		<section>
+			
+			<article style="background-color: #194d91; text-align:center; border-radius:10px;color:white;">
+				<!--<div >-->
+					<table style="margin: auto; text-align:center;">
+						<tr>
+							<td>
+								<label>Fill:</label><br>
+							</td>
+							<td>
+								<input type="checkbox" id="fill" name="fill" value="">
+							</td>
+							<td></td>
+							<td>
+								<label>Color:</label><br>
+							</td>
+							<td>
+								<input type="color" id="color" name="color" value="">
+							</td>
+						</tr>
+					</table>
+					
+					<section style="align:center; border:1px solid white;">
+						<table style="align:center;">
+							<tr style="margin: auto; text-align:center;">
+								
+								<td>
+									<input type="radio" id="line" name="type" value="" onclick="openType()">
+								</td>
+								<td>
+									<label>Line:</label><br>
+								</td>
+							</tr>
+							
+							<tr id="trLine" style="visibility: hidden; margin: auto; text-align:center;">
+								<td>
+									<label>x1:</label>
+								</td>
+								<td>
+									<input type="text" id="x1Line" name="x1Line" required>
+								</td>
+								<td>
+									<label>y1:</label>
+								</td>
+								<td>
+									<input type="text" id="y1Line" name="y1Line" required>
+								</td>
+								<td>
+									<label>x2:</label>
+								</td>
+								<td>
+									<input type="text" id="x2Line" name="x2Line" required>
+								</td>
+								<td>
+									<label>y2:</label>
+								</td>
+								<td>
+									<input type="text" id="y2Line" name="y2" required>
+								</td>
+							</tr>
+							
+							<tr style="margin: auto; text-align:center;">
+								
+								<td>
+									<input type="radio" id="rectangle" name="type" value="" onclick="openType()">
+								</td>
+								<td>
+									<label>Rectangle:</label>
+								</td>
+							</tr>
+							
+							<tr id="trRectangle" style="visibility: hidden; margin: auto; text-align:center;" >
+								<td>
+									<label>x1:</label>
+								</td>
+								<td>
+									<input type="text" id="x1Rectangle" name="x1Rectangle" required>
+								</td>
+								<td>
+									<label>y1:</label>
+								</td>
+								<td>
+									<input type="text" id="y1Rectangle" name="y1Rectangle" required>
+								</td>
+								<td>
+									<label>width:</label>
+								</td>
+								<td>
+									<input type="text" id="width" name="width" required>
+								</td>
+								<td>
+									<label>height:</label>
+								</td>
+								<td>
+									<input type="text" id="height" name="height" required>
+								</td>
+							</tr>
+							
+							<tr style="margin: auto; text-align:center;">
+								<td>
+									<input type="radio" id="triangle" name="type" value="" onclick="openType()">
+								</td>
+								<td>
+									<label>Triangle:</label><br/>
+								</td>
+							</tr>
+							
+							<tr id="trTriangle" style="visibility: hidden; margin: auto; text-align:center;">
+								<td>
+									<label>x1:</label>
+								</td>
+								<td>
+									<input type="text" id="x1Triangle" name="x1Triangle" required>
+								</td>
+								<td>
+									<label>y1:</label>
+								</td>
+								<td>
+									<input type="text" id="y1Triangle" name="y1Triangle" required>
+								</td>
+								<td>
+									<label>x2:</label>
+								</td>
+								<td>
+									<input type="text" id="x2Triangle" name="x2Triangle" required>
+								</td>
+								<td>
+									<label>y2:</label>
+								</td>
+								<td>
+									<input type="text" id="y2Triangle" name="y2Triangle" required>
+								</td>
+								<td>
+									<label>x3:</label>
+								</td>
+								<td>
+									<input type="text" id="x3Triangle" name="x3Triangle" required>
+								</td>
+								<td>
+									<label>y3:</label>
+								</td>
+								<td>
+									<input type="text" id="y3Triangle" name="y3Triangle" required>
+								</td>
+							</tr>
+							
+							
+							<tr style="margin: auto; text-align:center;">
+								<td>
+									<input type="radio" id="circle" name="type" value="" onclick="openType()">
+								</td>
+								<td>
+									<label>Circle:</label><br/>
+								</td>
+							</tr>
+							
+							<tr id="trCircle" style="visibility: hidden; margin: auto; text-align:center;">
+								<td>
+									<label>x1:</label>
+								</td>
+								<td>
+									<input type="text" id="x1Circle" name="x1Circle"  required>
+								</td>
+								<td>
+									<label>y1:</label>
+								</td>
+								<td>
+									<input type="text" id="y1Circle" name="y1Circle" required>
+								</td>
+								<td>
+									<label>radius:</label>
+								</td>
+								<td>
+									<input type="text" id="radius" name="radius" required>
+								</td>
+							</tr>
+							
+							
+						</table>
+						
+						</section>
+						<br/>
+						<section style="align:center;">
+								
+									<input type="submit" id="draw" name="draw" value="Draw" onclick="draw()">
+							
+						</section>
+				<!--</div>-->
+				
+			</article>
+			
+			<main style="border: 2px dashed #194d91;width: 60%;	float: right;">
+				<!--<div style="background-color: white border:2px dashed #728aed;">-->
+						<canvas id="drawing" width="500px" height="500px"></canvas>
+				<!--</div>-->
+			</main>
+		</section>
+				
+		<footer style="background-color: #417dcc; border: 1px solid black;color:white;">
+				<span style="color: white; text-align:center; font-size:20px;">HTML5 Template By Anissa</span>
+				<label id="nbOfVisits" style="float:right; font-size:15px; color: black; text-align:center; margin:auto;">Visits</label>
+		</footer>
+		<!--</div>-->
+	</body>
+</html>
+
+
+
+
+<script>
+	
+	
+
+function startTimer()
+{
+	//alert("ttttt");
+	var w = null; 
+   if (typeof(Worker)!=="undefined"){
+      
+      if (w==null){
+	  //alert("rrrrrrrrrr");
+         w = new Worker("timer.js");
+      }
+      
+      w.onmessage = function (event) {
+	  alert("sssssssss");
+         document.getElementById("timer").innerHTML = event.data;
+		 
+      };
+   } else {
+      
+      document.getElementById("timer").innerHTML = "Sorry, your browser does not support Web Workers ...";
+   }
+}
+
+var supportsStorage = (function() {
+	try {
+		return 'localStorage' in window && window['localStorage']!== null;} 
+	catch(e) {
+		return false;
+		}
+})();
+
+function al(){
+		alert("fffffffffff");
+}
+window.onload = function() {
+	
+	//startTimer();
+	
+	if(supportsStorage){
+		if(localStorage.countVisits){
+			localStorage.countVisits = Number(localStorage.countVisits) + 1;
+		}
+		else{
+			localStorage.countVisits = 1;
+		}
+		document.getElementById('nbOfVisits').innerHTML = 'This is the ' + localStorage.countVisits + 'th visit to the website';
+	}
+};
+
+
+function openType(){
+	if(document.getElementById('line').checked) {
+		document.getElementById('trLine').style.visibility = "visible";
+		document.getElementById('trRectangle').style.visibility = "hidden";
+		document.getElementById('trTriangle').style.visibility = "hidden";
+		document.getElementById('trCircle').style.visibility = "hidden";
+	}
+	
+	
+	if(document.getElementById('rectangle').checked) {
+		document.getElementById('trLine').style.visibility = "hidden";
+		document.getElementById('trRectangle').style.visibility = "visible";
+		document.getElementById('trTriangle').style.visibility = "hidden";
+		document.getElementById('trCircle').style.visibility = "hidden";
+	}
+	
+	if(document.getElementById('triangle').checked) {
+		document.getElementById('trLine').style.visibility = "hidden";
+		document.getElementById('trRectangle').style.visibility = "hidden";
+		document.getElementById('trTriangle').style.visibility = "visible";
+		document.getElementById('trCircle').style.visibility = "hidden";
+	}
+	
+	
+	if(document.getElementById('circle').checked) {
+		document.getElementById('trLine').style.visibility = "hidden";
+		document.getElementById('trRectangle').style.visibility = "hidden";
+		document.getElementById('trTriangle').style.visibility = "hidden";
+		document.getElementById('trCircle').style.visibility = "visible";
+	}
+}
+
+
+
+function draw(){
+	
+	
+	var drawing = document.getElementById ('drawing');
+	var ctx = drawing.getContext ('2d');
+	
+	ctx.lineWidth = 2;
+	
+	var fill = document.getElementById('fill').checked;	
+	var color = document.getElementById('color').value;
+	
+	//alert(color);
+	
+	if(document.getElementById('line').checked) {
+	alert('line');
+		var x1 = document.getElementById('x1Line').value;
+		var y1 = document.getElementById('y1Line').value;
+		var x2 = document.getElementById('x2Line').value;
+		var y2 = document.getElementById('y2Line').value;
+		
+		//alert(x1);
+		
+		if(x1 != 0 && y1 != 0 && x2 != 0 && y2 != 0){
+			if(fill){
+				ctx.fillStyle = color;
+			}
+		
+			ctx.strokeStyle = color;
+			
+			
+			ctx.beginPath();
+			ctx.moveTo(x1, y1);
+			ctx.lineTo(x2, y2);
+			ctx.closePath();
+			
+			if(fill){
+				ctx.fill();
+			}
+			
+			ctx.stroke();
+		}
+	}
+	
+	
+	if(document.getElementById('rectangle').checked) {
+		var x1 = document.getElementById('x1Rectangle').value;
+		var y1 = document.getElementById('y1Rectangle').value;
+		var width = document.getElementById('width').value;
+		var height = document.getElementById('height').value;
+		
+		if(x1 != 0 && y1 != 0 && width != 0 && height != 0){
+			
+			if(fill){
+				ctx.fillStyle = color;
+				ctx.fillRect(x1,y1,width,height);
+			}
+			else{
+				ctx.strokeStyle = color;
+				ctx.strokeRect(x1,y1,width,height);
+			}
+		}
+	}
+	if(document.getElementById('triangle').checked) {
+		var x1 = document.getElementById('x1Triangle').value;
+		var y1 = document.getElementById('y1Triangle').value;
+		var x2 = document.getElementById('x2Triangle').value;
+		var y2 = document.getElementById('y2Triangle').value;
+		var x3 = document.getElementById('x3Triangle').value;
+		var y3 = document.getElementById('y3Triangle').value;
+		
+		if(x1 != 0 && y1 != 0 && x2 != 0 && y2 != 0 && x3 != 0 && y3 != 0 ){
+				
+			if(fill){
+				ctx.fillStyle = color;
+			}
+		
+			ctx.strokeStyle = color;
+			
+			
+			ctx.beginPath();
+			ctx.moveTo(x1, y1);
+			ctx.lineTo(x2, y2);
+			ctx.lineTo(x3, y3);
+			ctx.closePath();
+			
+			if(fill){
+				ctx.fill();
+			}
+			
+			ctx.stroke();
+		}
+		
+	}
+	if(document.getElementById('circle').checked) {
+			var x1 = document.getElementById('x1Circle').value;
+			var y1 = document.getElementById('y1Circle').value;
+			var radius = document.getElementById('radius').value;
+			
+			if(x1 != 0 && y1 != 0 && radius != 0){
+			if(fill){
+				ctx.fillStyle = color;
+			}
+			
+			ctx.strokeStyle = color;
+			ctx.beginPath();
+			ctx.arc(x1,y1,radius,0,Math.PI*2);
+			ctx.stroke();
+			if(fill){
+				ctx.fill();
+			}
+			ctx.closePath();
+		}
+	}
+}
+
+
+
+window.onload(function(){
+	alert("gg");
+	startTimer();
+	alert("gg");
+});
+</script>

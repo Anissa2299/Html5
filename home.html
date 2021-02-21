@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="assets\CSS.css">
+	</head>
+	
+	<body>
+		<nav>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="fun.html">Fun</a></li>
+				<li><a href="about.html">About Us</a></li>
+			</ul>
+		</nav>
+	<!--<div style="border: 1px solid black; padding:10px;">-->
+	
+		<h1 style="text-align:center; color:#ffd503;">Welcome To My HTML5 Template</h1>
+		<h2 style="text-align:center; color:#ff9203;">Enjoy HTML5 Features!!</h2>
+		
+		<section>
+			<video style="width: 100%; height:300px;" controls poster="images\html5-logo.png">
+				<source src="videos\Html5.mp4">
+			</video>
+		</section>
+		
+		<div style="width:50%; height:50%; margin:auto ; margin-top:100px; margin-bottom:100px;">
+			<img src="images\yay.jpg" style="width:50%; height:50%; margin-left:150px; padding: 10px;">
+			<details>
+				<summary style="font-size:30px; color:#03058c; text-align:center;margin:auto;">Let's begin with a small surprise from HTML5, Click on the arrow</summary>
+				<br>
+				<p style="font-size:20px; color:#ff6f00; text-align:center;margin:auto;">Drag the image and drop it in the empty place</p>
+				<br>
+				<div id="dropdiv" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin:auto;width: 400px;height: 200px;padding: 10px;border: 1px solid #aaaaaa;"></div>
+				<br>
+				<img id="drag1" src="images\html5features.png" style="margin:auto; width: 400px;height: 200px;padding: 10px;" draggable="true" ondragstart="drag(event)">
+			</details>
+		</div>
+		
+		<footer style="background-color: #417dcc; border: 1px solid black;color:white;">
+				<span style="color: white; text-align:center; font-size:20px;">HTML5 Template By Anissa</span>
+		</footer>
+		<!--</div>-->
+	</body>
+</html>
+
+<script>
+	function allowDrop(ev) {
+	  ev.preventDefault();
+	}
+
+	function drag(ev) {
+	  ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev) {
+	  ev.preventDefault();
+	  var data = ev.dataTransfer.getData("text");
+	  ev.target.appendChild(document.getElementById(data));
+	}
+	
+</script>
+
+
+
